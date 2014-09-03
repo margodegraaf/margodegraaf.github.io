@@ -1,7 +1,5 @@
 # Front-End Development V2
-Margo de Graaf
-500645798
-V2-02
+Margo de Graaf | 500645798 | V2-02
 
 # Best practices
 Best practices used in code
