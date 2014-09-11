@@ -14,8 +14,8 @@ function Persoon(name) {
 	}
 } 
 
-persoon1 = new Persoon ("Bob")
-persoon1.speak() //alerts "Dit is een constructor object"
+var persoon1 = new Persoon ("Bob")
+persoon1.speak(); //alerts "Dit is een constructor object"
 
 
 
@@ -36,21 +36,21 @@ function Persoon(name) {
 } 
 
 Persoon.prototype.walk = function() {
-		console.log( this.name + " is walking");
+		console.log(this.name + " is walking");
 }
 
 Persoon.prototype.eat = function() {
-		console.log( this.name + " is eating");
+		console.log('Hi, my name is ' + this.name + " and I eat");
 }
 	
-persoon1 = new Persoon ("Bob")
-persoon1.speak(); //alerts "Dit is een constructor object"
+var persoon1 = new Persoon ("Bob")
+persoon1.speak(); 
 
-persoon2 = new Persoon ("Boberta")
-persoon2.walk(); //console logs "Boberta is walking"
+var persoon2 = new Persoon ("Boberta")
+persoon2.walk(); 
 
-persoon3 = new Persoon ("Margo")
-persoon3.eat(); //console logs "Margo is eating"
+var persoon3 = new Persoon ("Margo")
+persoon3.eat(); 
 
 
 
@@ -61,6 +61,7 @@ Maak nu hetzelfde object, met dezelfde properties en methods aan met een object 
 /* UITLEG
 Een object literal is eigenlijk het tegenovergestelde van een constructor object.
 Hij wordt vooral gebruikt als eenmalig iets. 
+De functie zou je ook nog weg kunnen laten, maar dit vond ik even makkelijker.
 */
 
 function Mensen() {

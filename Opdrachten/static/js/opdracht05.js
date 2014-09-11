@@ -4,6 +4,7 @@ var currentPosition = currentPositionMarker = customDebugging = debugId = map = 
 
 
 // FUNCTIE
+// Event target moet eigenlijk in een ander bestand omdat het een kleine libary is.
 function EventTarget() {
 	this._listeners = {}
 };
@@ -36,10 +37,10 @@ EventTarget.prototype = {
 // CONSTRUCTOR OBJECT
 var ET = new EventTarget();
 
-
 // LITERAL OBJECT
-var GPS = {
-	init: function() {
+var controller = {
+		// init staat voor intialize
+		init: function() {
 		// LOCAL
 		var GPS_AVAILABLE = 'GPS_AVAILABLE';
 		var GPS_UNAVAILABLE = 'GPS_UNAVAILABLE';
@@ -49,9 +50,12 @@ var GPS = {
 			debug_message('GPS is niet beschikbaar.')
 		});
 		(geo_position_js.init()) ? ET.fire(GPS_AVAILABLE) : ET.fire(GPS_UNAVAILABLE);
-	},
-	
-	_start_interval: function(event) {
+	}
+}
+
+// LITERAL OBJECT
+var gps = {
+	startInterval: function(event) {
 		var REFRESH_RATE = 1000;
 		debug_message("GPS is beschikbaar, vraag positie.");
 		_update_position();
@@ -59,20 +63,20 @@ var GPS = {
 		ET.addListener(POSITION_UPDATED, _check_locations);
 	},
 	
-	_update_position: function() {
+	updatePosition: function() {
 		intervalCounter++;
 		geo_position_js.getCurrentPosition(_set_position, _geo_error_handler, {
 		enableHighAccuracy: true
 		});
 	},
 	
-	_set_position: function(position) {
+	setPosition: function(position) {
 		currentPosition = position;
 		ET.fire("POSITION_UPDATED");
 		debug_message(intervalCounter + " positie lat:" + position.coords.latitude + " long:" + position.coords.longitude);
 	},
 	
-	_check_locations: function(event) {
+	checkLocations: function(event) {
 		for (var i = 0; i < locaties.length; i++) {
 				var locatie = {
 				coords: {
@@ -94,7 +98,7 @@ var GPS = {
 		}
 	},
 	
-	_calculate_distance: function(p1, p2) {
+	calculateDistance: function(p1, p2) {
 		var pos1 = new google.maps.LatLng(p1.coords.latitude, p1.coords.longitude);
 		var pos2 = new google.maps.LatLng(p2.coords.latitude, p2.coords.longitude);
 		return Math.round(google.maps.geometry.spherical.computeDistanceBetween(pos1, pos2), 0);
@@ -102,8 +106,8 @@ var GPS = {
 };
 
 // LITERAL OBJECT
-var googleMaps = {
-	generate_map: function(myOptions, canvasId) {
+var maps = {
+	generate: function(myOptions, canvasId) {
 		var LINEAIR = "LINEAIR";
 		var markerRij = [];
 		debug_message("Genereer een Google Maps kaart en toon deze in #" + canvasId)
@@ -150,11 +154,7 @@ var googleMaps = {
 		ET.addListener(POSITION_UPDATED, update_positie);
 	},
 	
-	isNumber: function(n) {
-		return !isNaN(parseFloat(n)) && isFinite(n);
-	},
-	
-	update_positie: function(event) {
+	updatePositie: function(event) {
 		var newPos = new google.maps.LatLng(currentPosition.coords.latitude, currentPosition.coords.longitude);
 		map.setCenter(newPos);
 		currentPositionMarker.setPosition(newPos);
@@ -163,16 +163,25 @@ var googleMaps = {
 
 // LITERAL OBJECT
 var debug = {
-	_geo_error_handler: function (code, message) {
+	geoErrorHandler: function (code, message) {
 		debug_message('geo.js error ' + code + ': ' + message);
 	},
 	
-	debug_message: function(message) {
+	message: function(message) {
 		(customDebugging && debugId) ? document.getElementById(debugId).innerHTML : console.log(message);
 	},
 	
-	set_custom_debugging: function(debugId) {
+	setCustomDebugging: function(debugId) {
 		debugId = this.debugId;
 		customDebugging = true;
 	}
 };
+
+// LITERAL OBJECT
+var helper = {
+	isNumber: function(n) {
+		return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+};
+
+	

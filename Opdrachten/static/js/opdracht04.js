@@ -8,7 +8,7 @@ Local variables have local scope: They can only be accessed within the function.
 
 function localScope(){
 	var iterator = 1;
-	var max = 2
+	var max = 2;
 	var min = 3;
 	
 	alert(iterator);
@@ -83,16 +83,10 @@ function showName (firstName, lastName) {
     
     // this inner function has access to the outer function's variables, including the parameter
 	function makeFullName () {
+		var private = nameIntro;
         alert(nameIntro + firstName + " " + lastName);
 	}
 	return makeFullName ();
 }
 
 showName ("Michael", "Jackson"); // Your name is Michael Jackson
-
-
-
-
-
-
-
