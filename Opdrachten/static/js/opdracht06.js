@@ -103,3 +103,5 @@ En schrijf er ook nog twee lege haakjes achter. VB: (function{}) ();
 // Start de functie 'init' uit het object 'cmdAanGeo.controller'
 cmdAanGeo.controller.init();
 })();
+
+//MAIKEN WAS HERE
