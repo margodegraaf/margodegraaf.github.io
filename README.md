@@ -29,7 +29,6 @@ Best practices used in code
 * Make your code understandable (Use short clear meaningful names)
 * Avoid global variables and objects
 * Local variables must be declared with the var keyword. 
-* Stick to a strict coding style (Use www.jslint.com)
 * Allow for configuration (Make a configuration object, so maintenance will be easy and allow customization.)
 * Use === Comparison (The == comparison operator always converts (to matching types) before comparison. The === operator forces comparison of values and type.)
 * Eval() is evil. (The "eval" function gives us access to JavaScript's compiler. It's risky!)

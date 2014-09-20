@@ -1,0 +1,4 @@
+Naam: Margo de Graaf
+Nummer: 500645798
+Klas: V2-02
+Vak: Front-end Development 2
