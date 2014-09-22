@@ -1,7 +1,14 @@
+/* Gehele body krijgt een licht grijze achtergrondkleur. */
+body {
+    background-color: #D3D3D3;
+}
+
+/* Laat pagina zien alsof er geen section-elementen in zitten, deze zijn verstopt. */
 section {
 	display: none;
 } 
 
+/* Elk element die de class "active" toegewezen krijgt zal de volle breedte gebruiken en weer zichtbaar zijn als block element.  */
 .active {
     display: block;
 }
