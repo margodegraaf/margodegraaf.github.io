@@ -5,9 +5,9 @@ var myFavoMovies = myFavoMovies || {};
 (function () {
 
 	/* CONTROLLER
-	- Object literal
-	- Method genaamd "init"
-	- Twee methods aanroepen uit verschillende objecten */
+	- Object literal.
+	- Method genaamd "init".
+	- Twee methods aanroepen uit verschillende objecten. */
 	myFavoMovies.controller = {
 		init: function () {
 			myFavoMovies.router.init();
@@ -16,10 +16,10 @@ var myFavoMovies = myFavoMovies || {};
 	};
 	
 	/* ROUTER
-	- Object literal
-	- Method genaamd "init"
-	- Routie object (Routie is een javascript routing libary; een verzameling functies en methodes; die kijkt door middel van hashtekens naar het pad wat de gebruiker opvraagt en toont daarna de juiste content.)
-	- Twee properties genaamd "about" en "movies" */
+	- Object literal.
+	- Method genaamd "init".
+	- Routie object. (Routie is een javascript routing libary; een verzameling functies en methodes; die kijkt door middel van hashtekens naar het pad wat de gebruiker opvraagt en toont daarna de juiste content.)
+	- Twee properties genaamd "about" en "movies". */
 	myFavoMovies.router = {
 		init: function () {	
 			routie({
@@ -34,12 +34,13 @@ var myFavoMovies = myFavoMovies || {};
 	};
 	
 	/* CONTENT
-	- Object literals
-	- Array genaamd "overzicht" met daarin vier object literals
-	- HTML content
-	- Functie html (zorgt ervoor dat de <p> </p> gaan werken in description van het about object en dat de covers goed getoond worden.)
-	- this. (refereert naar object dat de method aanroept.) 
-	- return (functie zal stoppen na geeft waarde (value) terug aan hetgeen wat het aanroepte. ) */
+	- Object literals.
+	- Array genaamd "overzicht" met daarin vier object literals.
+	- HTML content.
+	- De method genaamd html zorgt ervoor dat de <p> </p> gaan werken in description van het about object.
+	- De method src zorgt ervoor dat de cover afbeeldingen getoond worden.
+	- this. refereert naar object dat de method aanroept.
+	- return functie zal stoppen na geeft waarde (value) terug aan hetgeen wat het aanroepte.  */
 	myFavoMovies.content = {
 		about: {
 			title: "About this app",
@@ -92,11 +93,11 @@ var myFavoMovies = myFavoMovies || {};
 	};
 		
 	/* SECTIONS
-	- Object literal
-	- Method "init", "about", "movies" en "toggle"
+	- Object literal.
+	- Method "init", "about", "movies" en "toggle".
 	- Transparency (Semantische template engine voor browsers. Zorgt ervoor dat de data in het content object wordt ingeladen/gerendert in de juiste section door middel van een ID.)
-	- Variabele genaamd selector (local scope)
-	- For loop (haalt eerst CSS class "active" weg met "classList.remove", checkt daarna welke parameter oftewel section hij door krijgt en voegt dan weer de CSS class active aan toe door middel van "classList.add" */
+	- Variabele genaamd selector. (local scope)
+	- For loop haalt eerst CSS class "active" weg met "classList.remove", checkt daarna welke parameter oftewel section hij door krijgt en voegt dan weer de CSS class active aan toe door middel van "classList.add". */
 	myFavoMovies.sections = {
 		init: function () {
 			myFavoMovies.sections.about();
@@ -119,6 +120,6 @@ var myFavoMovies = myFavoMovies || {};
 		}
 	};
 
-// Start de functie 'init' uit het object 'myFavoMovies.controller'
+// Start de functie 'init' uit het object 'myFavoMovies.controller'.
 myFavoMovies.controller.init();
 })();
