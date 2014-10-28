@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>Iterating Collections with Underscore</title>
+	    <script type="text/javascript" src="underscore.js"></script> 
+	    <script type="text/javascript" src="SampleData.js"></script> 
+	    
+	    <script type="text/javascript">	
+		// ophalen van informatie en toevoegen aan div genaamd container
+		function getMoviesInfo(elem) {
+	    	var container = document.getElementById("container");
+	    	var movies = "<h1>" + elem.id + "</h1>" + "<h2>" + elem.title + "</h2>" + "<img>" + elem.cover + "</img>" + "<p>" + elem.simple_plot + "</p>";
+	    	
+	    	container.innerHTML = container.innerHTML + movies;
+	    }
+	    
+	    // bekijk hoeveel items er in SampleData zitten
+	    window.addEventListener("load", function(e) {
+	      /* use the "size" property to get number of elements */
+	      numMoviesElem = document.getElementById("numMovies");
+	      numMoviesElem.innerHTML = numMoviesElem.innerHTML + _.size(movies);
+	
+		  /* use the each() function to iterate over every element */
+		  _.each(movies, getMoviesInfo);
+	    });
+	    
+	    
+	    </script>
+	    
+	</head>
+	<body>
+		<h1>Favourite movies</h1>
+		<h3 id="numMovies">Number of Movies: </h3>
+		<div id="container"></div>
+	</body>
+</html>

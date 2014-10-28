@@ -1,0 +1,133 @@
+/*--------------------------------*\
+   CSS bestand voor tablet opmaak
+\*--------------------------------*/
+
+/* Movies */
+#movies article {
+	width: 50%;
+}
+
+/* Small detail */
+.small_detail, .small_detail img, .small_detail aside {
+	width: 16.75em;
+	height: 26em;
+}
+
+.small_detail aside {
+	bottom: -21.5em;
+	width: 15.5em;
+	left: 0;
+	-webkit-transition-property: bottom;
+	-moz-transition-property: bottom;
+	-o-transition-property: bottom;
+	transition-property: bottom;
+}
+
+.small_detail:hover aside {
+	bottom: -1.25em;
+}
+
+.small_detail aside h1 {
+	height: 5em;
+	line-height: 1.25em;
+	font-size: 1.3em;
+}
+
+.small_detail aside [data-bind="genres"] {
+	width: 100%;
+}
+
+.small_detail .simplePlot {
+	position: relative;
+	left: 0;
+	width: 100%;
+	margin: 0;
+}
+
+.small_detail img {
+	-webkit-transition-property: top;
+	-moz-transition-property: top;
+	-o-transition-property: top;
+	transition-property: top;
+}
+
+.small_detail:hover img {
+	top: -18em;
+	left: 0;
+}
+
+/* Small detail & Detail */
+.detail .small_detail aside, #detail aside {
+	left: 14em;
+}
+
+.detail .small_detail aside {
+	width: 60%;
+	top: -0.188em;
+	height: 12em;
+	position: relative;
+}
+
+.detail .small_detail aside h1 {
+	width: auto;
+	height: auto;
+}
+
+.detail .small_detail [data-bind="genres"] {
+	margin: 2em 0em 2em 0em;
+}
+
+.detail .small_detail [data-bind="score"] {
+	position: relative;
+	top: auto;
+	text-align: left;
+}
+
+.detail .small_detail figure {
+	height: auto;
+}
+
+.detail .small_detail img {
+	width: 12em;
+	height: 19.5em;
+	position: absolute;
+}
+
+.detail .small_detail:hover img {
+	top: 0;
+}
+
+/* Detail */
+#detail aside {
+	width: 60%;
+}
+
+/* Navigatie */
+header figure {
+	display: none;
+}
+
+/* Menu */
+nav {
+	display: inline-block;
+	margin: 0em 0em 0.65em 0em;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 1em 0em 0em 0em;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav a {
+	display: inline-block;
+	line-height: 1.5em;
+	margin: -1em 0em 0em 0.7em;
+}
+
+nav a:hover {
+	color: #59998c;
+}

@@ -1,0 +1,190 @@
+/*--------------------------------------------*\
+   ELK DEVICE
+\*--------------------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* BODY */
+body {
+	background-color: #ffffff;
+	font-family: 'Lato', sans-serif;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+h2 {
+	margin: 0em 0em 0.2em 0em;
+}
+
+h3 {
+	margin: 0.6em 0em 0em 0em;
+}
+
+a {
+	color: #59998c;
+	text-decoration: none;
+}
+
+p, figure {
+	margin: 1em 0em 1em 0em;
+	line-height: 1.5em;
+}
+
+ul, li {
+	list-style-type: none;
+}
+
+#movies a:after {
+	content: ", ";
+}
+#movies a:last-child:after {
+	content: "";
+}
+
+/* ID */
+#content {
+	width: 100%;
+	margin: 5em 0em 0em 0em;
+}
+
+/* SECTION */
+section {
+	display: none;
+	background-color: #D3D3D3;
+}
+
+/* CLASS */
+.active {
+	display: block;
+}
+
+#about, #movies {
+	padding: 2em;				/* Zet content uit about en movies netter neer */
+}
+
+#movies.active {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#movies.detail article {
+	width: 100%;
+}
+
+/*--------------------------------------------*\
+   SMARTPHONE
+\*--------------------------------------------*/
+
+/* NAV */
+header {
+	background-color: #7EC9AC;
+	padding: 1em 0;
+	width: 100%;
+	position: absolute;
+	top: 0;						/* header wordt boven aangezet */
+}
+
+header figure {
+	margin: 0;
+	padding: 0 0 0 2em;
+}
+
+header figure img {
+	display: none;
+
+}
+
+header figure img.active {
+	display: inline;
+}
+
+
+
+nav {
+	display: none;
+	background-color: #7EC9AC;
+	width: 100%;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 1em 0em 0em 1em;
+	padding: 0 0 0 1em;
+}
+
+nav a {
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	line-height: 1.8em;
+	font-style: normal;
+	display: block;
+
+}
+
+#movies article {
+	width: 100%;
+}
+
+/*--------------------------------------------*\
+   TABLET
+\*--------------------------------------------*/
+
+@media screen and (min-width: 47em) {
+	header figure {
+		display: none;
+	}
+
+
+	nav {
+		display: inline-block;
+		margin: 0em 0em 0.65em 0em;
+	}
+
+	nav li {
+		display: inline-block;
+	}
+
+	nav ul {
+
+		list-style-type: none;
+		margin: 1em 0em 0em 0em;
+
+	}
+
+	nav a {
+		display: inline-block;
+		line-height: 1.5em;
+		margin: -1em 0em 0em 0.7em;
+
+	}
+
+	nav a:hover {
+		color: #59998c;
+	}
+
+	#movies article {
+		width: 50%;
+	}
+
+}
+
+/*--------------------------------------------*\
+   DESKTOP
+\*-------------------------------------------- */
+
+@media screen and (min-width: 63em) {
+	#movies article {
+		width: 25%;
+	}
+
+	#movies article p {
+		padding: 0 3em 0 0;
+	}
+}

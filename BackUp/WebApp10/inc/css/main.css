@@ -1,0 +1,215 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* BODY */
+body {
+	background-color: #f0f0f0;
+	font-family: 'Lato', sans-serif;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-weight: 700;
+	line-height: 2em;
+}
+
+h2 {
+	margin: 0em 0em 0.2em 0em;
+}
+
+h3 {
+	margin: 0.6em 0em 0em 0em;
+}
+
+a {
+	color: #59998c;
+	text-decoration: none;
+}
+
+p, figure {
+	line-height: 1.5em;
+}
+
+ul, li {
+	list-style-type: none;
+}
+
+/* SECTION */
+section {
+	display: none;
+}
+
+/* ID */
+#content {
+	width: 100%;
+	margin: 6em 0em 0em 0em;
+}
+
+
+#about, #movies {
+	padding: 2em;				/* Zet content uit about en movies netter neer */
+}
+
+#movies article {
+	padding: 0 0 2em 0;
+}
+
+
+#movies a:after {
+	content: ", ";
+}
+
+#movies a:last-child:after {
+	content: "";
+}
+
+h1#pageTitle {
+	display: none;
+	font-size: 1.5em;
+	height: 1.5em;
+	padding: 1.3em 0 0 1.5em;
+}
+h1#pageTitle.active {
+	display: inline-block;
+}
+
+/* OVERVIEW */
+.small_detail {
+	overflow: hidden;
+	position: relative; /* Relatief aan #movies */
+}
+
+.small_detail img {
+	position: absolute; /* Linksboven in de hoek */
+	top: 0;
+	left: 0;
+	-webkit-transition-duration: 0.5s;
+}
+
+.small_detail aside {
+	position: absolute;
+	background-color: #fff;
+	z-index: 1;
+	padding: 10px;
+	-webkit-transition-duration: 0.5s;
+}
+
+.small_detail aside h1 {
+	font-size: 1.5em;
+	line-height: 1.5em;
+}
+
+.small_detail aside [data-bind="score"] {
+	font-size: 3em;
+	line-height: 0.5em;
+	padding: 0.5em 0;
+	bottom: 10px;
+	position: absolute;
+	color: #999;
+}
+
+.small_detail aside h3 {
+	font-size: 1em;
+}
+
+#detail aside p {
+	margin: 0.5em 0 2em 0;
+}
+
+.small_detail aside .simplePlot {
+	font-size: 1em;
+	padding: 2em 0;
+	color: #999;
+}
+
+/* DETAIL */
+.detail .small_detail {
+	overflow: visible;
+	height: auto;
+}
+
+
+.detail .small_detail aside, #detail aside {
+	top: 0;
+	position: relative;
+	height: auto;
+	background-color: #f0f0f0;
+	padding: 0;
+}
+
+.detail .small_detail aside [data-bind="score"] {
+	font-size: 3em;
+	line-height: 0.5em;
+	padding: 1em 0 0 0;
+	position: relative;
+	color: #999;
+}
+
+#detail ul, #detail li {
+	float: left;
+}
+
+#detail ul {
+	margin: 0.5em 0 2em;
+	width: 100%;
+}
+
+#detail li {
+	margin: 0 4px 0 0;
+	line-height: 1.5em;
+}
+
+#detail li:after {
+	content: ",";
+}
+
+#detail li:last-child:after {
+	content: "";
+}
+
+/* CLASS */
+.active {
+	display: inline-block;
+}
+
+#movies.active {
+	display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	-webkit-flex-flow: row wrap;
+}
+
+#about p {
+	margin: 1em 0;
+}
+
+#movies.detail article {
+	width: 100%;
+}
+
+#movies p.simplePlot {
+	display: none;
+}
+
+#movies p.simplePlot.active {
+	display: block;
+}
+
+#loader {
+	z-index: 3;
+	background-color: rgba( 255, 255, 255, 0.8);
+	background-image: url("../img/loader.gif");
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
+}

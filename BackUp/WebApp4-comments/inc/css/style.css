@@ -1,0 +1,60 @@
+/* ALLES */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* BODY */
+body {
+    background-color: #ffffff;
+}
+
+p, figure {
+	margin: 1em 0em 1em 0em;
+}
+
+/* ID */
+#content {
+	width: 100%;
+	margin-top: 4em;
+
+}
+
+#about, #movies  {
+	padding: 2em;
+}
+
+/* NAV */
+header nav {
+	background-color: #7EC9AC;
+	padding: 1.2em;
+  	width: 100%;
+  	position: absolute;
+  	top: 0;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav a {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 1.5em;
+	margin-left: 0.6em;
+}
+
+nav a:hover {
+	color: #59998c;
+}
+
+/* SECTION */
+section {
+	display: none;
+	background-color: #D3D3D3;
+} 
+
+/* CLASS */
+.active {
+    display: block;
+}

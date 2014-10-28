@@ -1,0 +1,341 @@
+/*--------------------------------------------*\
+   ELK DEVICE
+\*--------------------------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* BODY */
+body {
+	background-color: #f0f0f0;
+	font-family: 'Lato', sans-serif;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+h2 {
+	margin: 0em 0em 0.2em 0em;
+}
+
+h3 {
+	margin: 0.6em 0em 0em 0em;
+}
+
+a {
+	color: #59998c;
+	text-decoration: none;
+}
+
+p, figure {
+	line-height: 1.5em;
+}
+
+ul, li {
+	list-style-type: none;
+}
+
+/* SECTION */
+section {
+	display: none;
+}
+
+/* ID */
+#content {
+	width: 100%;
+	margin: 5em 0em 0em 0em;
+}
+
+
+#about, #movies {
+	padding: 2em;				/* Zet content uit about en movies netter neer */
+}
+
+#movies article {
+	padding: 0 0 2em 0;
+}
+
+
+#movies a:after {
+	content: ", ";
+}
+
+#movies a:last-child:after {
+	content: "";
+}
+
+/* OVERVIEW */
+
+/* DETAIL */
+
+	
+#detail ul, #detail li {
+	float: left;
+}
+
+
+/* CLASS */
+.active {
+	display: inline-block;
+}
+
+#movies.active {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#about p {
+	margin: 1em 0;
+}
+
+#movies.detail article {
+	width: 100%;
+}
+
+#movies p.simplePlot {
+	display: none;
+}
+
+#movies p.simplePlot.active {
+	display: block;
+}
+
+/*--------------------------------------------*\
+   SMARTPHONE
+\*--------------------------------------------*/
+
+/* NAV */
+header {
+	background-color: #7EC9AC;
+	padding: 1em 0;
+	width: 100%;
+	position: absolute;
+	top: 0;						/* header wordt boven aangezet */
+}
+
+header figure {
+	margin: 0;
+	padding: 0 0 0 2em;
+}
+
+header figure img {
+	display: none;
+
+}
+
+header figure img.active {
+	display: inline;
+}
+
+nav {
+	display: none;
+	background-color: #7EC9AC;
+	width: 100%;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 1em 0em 0em 1em;
+	padding: 0 0 0 1em;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	line-height: 1.8em;
+	font-style: normal;
+	display: block;
+
+}
+
+#movies article {
+	width: 100%;
+}
+
+/*--------------------------------------------*\
+   TABLET
+\*--------------------------------------------*/
+
+@media screen and (min-width: 46em) {
+	header figure {
+		display: none;
+	}
+
+	nav {
+		display: inline-block;
+		margin: 0em 0em 0.65em 0em;
+	}
+
+	nav li {
+		display: inline-block;
+	}
+
+	nav ul {
+
+		list-style-type: none;
+		margin: 1em 0em 0em 0em;
+
+	}
+
+	nav a {
+		display: inline-block;
+		line-height: 1.5em;
+		margin: -1em 0em 0em 0.7em;
+	}
+
+	nav a:hover {
+		color: #59998c;
+	}
+	
+	/*
+		OVERVIEW
+	*/
+	.small_detail, .small_detail img, .small_detail aside {
+		width: 268px;
+		height: 398px;
+	}
+	
+	.small_detail {
+		overflow: hidden;
+		position: relative; /* Relatief aan #movies */
+	}
+	
+	.small_detail img {
+		position: absolute; /* Linksboven in de hoek */
+		top: 0;
+		left: 0;
+		
+		-webkit-transition-property: top;
+		-webkit-transition-duration: 0.5s;
+	}
+	
+	.small_detail aside {
+		position: absolute;
+		bottom: -345px;
+		left: 0;
+		background-color: #fff;
+		z-index: 1;
+		
+		-webkit-transition-property: bottom;
+		-webkit-transition-duration: 0.5s;
+		
+		width: 248px;
+		
+		padding: 10px;
+	}
+	
+		.small_detail aside h1 {
+			text-transform: uppercase;
+			font-size: 1.5em;
+			height: 70px;
+		}
+		
+		.small_detail aside [data-bind="score"] {
+			font-size: 3em;
+			line-height: 0.5em;
+			padding: 0.5em 0;
+			bottom: 10px;
+			position: absolute;
+			color: #999;
+		}
+		
+		.small_detail aside h3 {
+			font-size: 1em;
+		}
+		
+		.small_detail aside .simplePlot {
+			font-size: 1em;
+			padding: 2em 0;
+			color: #999;
+		}
+	
+	.small_detail:hover aside {
+		bottom: -20px;
+	}
+	
+	.small_detail:hover img {
+		top: -100px;
+	}
+	
+	/*
+		DETAIL
+	*/
+	
+	.detail .small_detail {
+		overflow: visible;
+		height: auto;
+	}
+	
+	.detail .small_detail aside, #detail aside {
+		top: 0;
+		position: relative;
+		height: auto;
+		left: 288px;
+		background-color: #f0f0f0;
+		padding: 0;
+	}
+	
+	#detail aside {
+		width: 60%;
+	}
+	
+	.detail .small_detail aside {
+		top: -3px;
+	}
+	
+	#detail aside p {
+		width: 100%;
+		margin: 0.5em 0 2em 0;
+	}
+	
+	.detail .small_detail:hover img {
+		top: 0;
+	}
+	
+	.detail .small_detail aside [data-bind="score"] {
+		font-size: 3em;
+		line-height: 0.5em;
+		padding: 1em 0 0 0;
+		position: relative;
+		color: #999;
+	}
+	
+	#detail ul {
+		margin: 0.5em 0 2em;
+		width: 100%;
+	}
+	
+	#detail li {
+		margin: 0 4px 0 0;
+		line-height: 1.5em;
+	}
+	
+	#detail li:after {
+		content: ",";
+	}
+	
+	#detail li:last-child:after {
+		content: "";
+	}
+	
+
+}
+
+/*--------------------------------------------*\
+   DESKTOP
+\*-------------------------------------------- */
+
+@media screen and (min-width: 63em) {
+	#movies article {
+		width: 25%;
+	}
+	
+	#detail aside {
+		width: 75%;
+	}	
+}

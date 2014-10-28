@@ -1,0 +1,8 @@
+/*--------------------------------------------*\
+   Importeren van verschillende CSS bestanden
+\*--------------------------------------------*/
+
+@import url("main.css");
+@import url("smartphone.css");
+@import url("tablet.css") (min-width: 35em);
+@import url("desktop.css") (min-width: 66em);

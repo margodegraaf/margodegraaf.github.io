@@ -1,0 +1,13 @@
+/*---------------------------------*\
+   CSS bestand voor desktop opmaak
+\*---------------------------------*/
+
+/* Movies */
+#movies article {
+	width: 25%;
+}
+
+/* Detail */
+#detail aside {
+	width: 75%;
+}

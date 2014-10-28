@@ -1,0 +1,127 @@
+header figure {
+	display: none;
+}
+
+nav {
+	display: inline-block;
+	margin: 0em 0em 0.65em 0em;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 1em 0em 0em 0em;
+}
+
+nav a {
+	display: inline-block;
+	line-height: 1.5em;
+	margin: -1em 0em 0em 0.7em;
+}
+
+nav a:hover {
+	color: #59998c;
+}
+
+#movies article {
+	width: 50%;
+}
+
+/*
+	OVERVIEW
+*/
+.small_detail, .small_detail img, .small_detail aside {
+	width: 268px;
+	height: 26em;
+}
+
+.small_detail img {
+	-webkit-transition-property: top;
+}
+
+.small_detail aside {
+	bottom: -345px;
+	left: 0;
+	width: 248px;
+	-webkit-transition-property: bottom;
+}
+
+.small_detail aside h1 {
+	height: 5em;
+	line-height: 1.25em;
+}
+
+.small_detail aside [data-bind="genres"] {
+	width: 100%;
+}
+
+.small_detail .simplePlot {
+	position: relative;
+	left: 0;
+	width: 100%;
+	margin: 0;
+}
+
+.small_detail:hover aside {
+	bottom: -20px;
+}
+
+.small_detail:hover img {
+	top: -100px;
+	left: 0;
+}
+
+/*
+	DETAIL
+*/
+
+.detail .small_detail aside, #detail aside {
+	left: 288px;
+}
+
+#detail aside {
+	width: 60%;
+}
+
+.detail .small_detail aside {
+	width: 60%;
+	top: -3px;
+	height: 12em;
+	position: relative;
+}
+
+.small_detail aside h1 {
+	font-size: 1.3em;
+}
+
+.detail .small_detail:hover img {
+	top: 0;
+}
+
+.detail .small_detail figure {
+	height: auto;
+}
+
+.detail .small_detail img {
+	width: 268px;
+	height: 26em;
+	position: absolute;
+}
+
+.detail .small_detail aside h1 {
+	width: auto;
+	height: auto;
+}
+
+.detail .small_detail [data-bind="genres"] {
+	margin: 2em 0 0 0;
+}
+
+.detail .small_detail [data-bind="score"] {
+	position: relative;
+	top: auto;
+	text-align: left;
+}

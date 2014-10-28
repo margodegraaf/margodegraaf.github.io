@@ -14,7 +14,7 @@ Best practices used in code
 ## HTML
 * Always Close Your Tags
 * Never Use Inline Styles
-* Never Use Inline Javascript. 
+* Never Use Inline Javascript
 * Place all External CSS Files Within the Head Tag
 * Keep Your Tag Names Lowercase
 
@@ -31,7 +31,6 @@ Best practices used in code
 * Local variables must be declared with the var keyword. 
 * Allow for configuration (Make a configuration object, so maintenance will be easy and allow customization.)
 * Use === Comparison (The == comparison operator always converts (to matching types) before comparison. The === operator forces comparison of values and type.)
-* Eval() is evil. (The "eval" function gives us access to JavaScript's compiler. It's risky!)
 * Place external scripts at the bottom of the page (When loading a script, the browser can't continue on until the entire file has been loaded.)
 * Use {} instead of New Object() (Object literals zijn overzichtelijker dan een constructor object)
 * Use [] Instead of New Array() (The rule is simple: when the property names are small sequential integers, you should use an array. Otherwise, use an object.)
